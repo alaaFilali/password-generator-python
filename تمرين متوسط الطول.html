@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>تمرين متوسط الطول</title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">تمرين متوسط الطول</h1>
+        <div class="content">
+            <p>
+                التعليمات: 
+            </p>
+            <p>
+                اكتب برنامج يقوم بحساب متوسط طول تلاميذ من قائمة اطوال يدخلها 
+                المستخدم
+            </p>
+            <p>
+                يمكن حساب متوسط الطول من خلال جمع جميع الاطوال قم قسمتها على عدد التلاميذ
+                ثم النتيجة النهائية سوف تدور الى الوحدة. 
+            </p>
+            <p>
+                سوف اطلب من المستخدم ان يدخل الاطوال ويفصل بينهم بفراغ ثم سوف استعمل 
+                هذين السطرين لتحويل تلك الاطوال الى قائمة اطوال
+                int 
+                لان الاطوال التي سوف يدخلها سوف تكون عبارة عن 
+                string 
+                ولايمكنني عمل مختلف العمليات الرياضية عليها
+                ولا تقلق حولها وحول كيفية عملها لاني سوف اشرح ذلك في الدرس القادم
+            </p>
+            <pre><code>
+student_heights = input("Input a list of student heights: ").split()
+
+for n in range(0, len(student_heights)):
+    student_heights[n] = int(student_heights[n])
+
+print(student_heights)
+            </code></pre>
+            <p>
+                لو اشغل البرنامج الان كما هو: 
+            </p>
+            <pre><code>
+Input a list of student heights: 156, 150, 189, 170, 180
+[156, 150, 189, 170, 180]
+            </code></pre>
+            <p>
+                مهمتك هي ان تأخذ هذه القائمة وتحسب متوسط الطول.
+            </p>
+            <p>
+                بايثون لديها دوال مفيدة جدا فهناك الدالة 
+                len 
+                التي ترجع لك طول القائمة
+            </p>
+            <pre><code>
+print(len([1, 2, 3, 4, 5]))
+            </code></pre>
+            <pre><code>
+5
+            </code></pre>
+            <p>
+                وهناك ايضا دالة تسمى 
+                sum 
+                التي سوف ترجع لك مجموع عناصر قائمة
+            </p>
+            <pre><code>
+numbers = [1, 2, 3, 4, 5]
+print(sum(numbers))
+            </code></pre>
+            <pre><code>
+15
+            </code></pre>
+            <p>
+                اذن لحساب متوسط هذه القائمة نقسم مجموع عناصر القائمة على عدد عناصرها 
+                ولكنني لا اريد منك ان تستعمل هذه الدوال لانها سهلة جدا ولكن استعمل
+                ماتعلمته عن حلقة 
+                for 
+                لكي تحقق نفس الشيء
+            </p>
+            <p>
+                حظا موفقا في حل التمرين.
+            </p>
+            <p>
+                الحل: 
+            </p>
+            <p>
+                لكي احسب متوسط الطول اضع متغير  
+                total_height
+                وقيمته الابتدائية هي 
+                0
+                ثم باستعمال حلقة 
+                for 
+                ادور حول القائمة وفي كلمة مرة قيمة العنصر الى المتغير
+                total_height
+            </p>
+            <pre><code>
+total_height = 0
+for height in student_heights:
+    total_height += height
+            </code></pre>
+            <p>
+                الان كيف نحسب عدد العناصر في قائمة باستعمال حلقة 
+                for 
+                ؟ 
+                بنفس الطريقة نضع متغير وفي كل مرة ندور على الحلقة نضيف واحد 
+                اليه وفي نهاية الحلقة يكون اضاف واحد بعدد عناصر القائمة 
+                اي عدد عناصر القائمة
+            </p>
+            <pre><code>
+num_of_students = 0
+for student in student_heights:
+    num_of_students += 1
+            </code></pre>
+            <p>
+                تبقى في الاخير ان اقوم بقسمة 
+                total_height 
+                على 
+                num_of_students
+                واقوم بتدوير القيمة وهكذا احصل على متوسط طول التلاميذ.
+            </p>
+            <pre><code>
+student_heights = input("Input a list of student heights: ").split()
+
+for n in range(0, len(student_heights)):
+    student_heights[n] = int(student_heights[n])
+
+total_height = 0
+for height in student_heights:
+    total_height += height
+
+num_of_students = 0
+for student in student_heights:
+    num_of_students += 1
+
+print(round(total_height / num_of_students))
+            </code></pre>
+        </div>
+    </div>
+</body>
+
+</html>
