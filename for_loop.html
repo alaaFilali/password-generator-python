@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>
+        حلقة
+        for
+    </title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">
+            حلقة
+            for
+        </h1>
+        <div class="content">
+            <p>
+                في هذا الدرس سوف نتحدث عن مفهوم الحلقات واول حلقة سوف نتعلم عنها
+                هي حلقة 
+                for 
+                او بالعربية 
+                "من اجل كل عنصر في قائمة افعل شيئا ما"
+            </p>
+            <pre><code>
+for item in list_of_items:
+    # do something to each item
+            </code></pre>
+            <p>
+                باستعمال حلقة 
+                for 
+                يمكنك ان تفعل شيئا ما لكل عنصر في قائمة 
+            </p>
+            <p>
+                هنا لدينا قائمة فواكه. اذا اردت طباعة كل الفواكه في الشاشة استعمل حلقة 
+            </p>
+            <pre><code>
+fruits = ["Apples", "Peach", "Pear"]
+
+for fruit in fruits:
+    print(fruit)
+            </code></pre>
+            <pre><code>
+Apples
+Peach
+Pear
+            </code></pre>
+            <p>
+                الاسم التي تضعه امام الكلمة 
+                for 
+                هو اسم المتغير الذي سيحمل قيمة كل عنصر في القائمة 
+                ويمكنك تسميته كما تحب ولكن افضل تسمية هي النسخة الفردية من اسم القائمة 
+                فاذا كانت القائمة فواكه اذن نستعمل الاسم فاكهة وهكذا
+                وبعد الكلمة 
+                in 
+                نضع القائمة ثم نقطتين فوق بعض 
+                واي سطر يبدأ باربع فراغات يعد داخل الحلقة وسوف ينفذ بعدد العناصر في القائمة 
+            </p>
+            <p>
+                الان بالاضافة الى طباعة اسم الفاكهة او طباعة اسم الفاكهة 
+                + 
+                الكلمة كعكة بمعنى كعكة التفاح ثم كعكة الخوخ ثم كعكة الاجاس
+            </p>
+            <pre><code>
+fruits = ["Apples", "Peach", "Pear"]
+
+for fruit in fruits:
+    print(fruit)
+    print(fruit + " Pie")
+            </code></pre>
+            <pre><code>
+Apples
+Apples Pie
+Peach
+Peach Pie
+Pear
+Pear Pie
+            </code></pre>
+            <p>
+                الان لو اردت طباعة الفائمة
+                fruits 
+                ولكن اخطأت ووضعتها داخل الحلقة فسوف تطبع بعدد عناصر القائمة وليس 
+                هذا مااردته بل اردت طباعة القائمة في نهاية الحلقة لذلك الفراغ مهم 
+                لنبين ان هذا السطر تابع للحلقة او لا 
+            </p>
+            <pre><code>
+fruits = ["Apples", "Peach", "Pear"]
+
+for fruit in fruits:
+    print(fruit)
+    print(fruit + " Pie")
+    print(fruits)
+            </code></pre>
+            <pre><code>
+Apples
+Apples Pie
+["Apples", "Peach", "Pear"]
+Peach
+Peach Pie
+["Apples", "Peach", "Pear"]
+Pear
+Pear Pie
+["Apples", "Peach", "Pear"]
+            </code></pre>
+            <p>
+                ولكن ما اردته هو هذا: 
+            </p>
+            <pre><code>
+fruits = ["Apples", "Peach", "Pear"]
+
+for fruit in fruits:
+    print(fruit)
+    print(fruit + " Pie")
+print(fruits)
+            </code></pre>
+            <pre><code>
+Apples
+Apples Pie
+Peach
+Peach Pie
+Pear
+Pear Pie
+["Apples", "Peach", "Pear"]
+            </code></pre>
+        </div>
+    </div>
+</body>
+
+</html>
