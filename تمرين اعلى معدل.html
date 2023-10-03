@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>تمرين اعلى معدل</title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">تمرين اعلى معدل</h1>
+        <div class="content">
+            <p>
+                التعليمات: 
+            </p>
+            <p>
+                اكتب برنامج يقوم بحساب اكبر 
+                score 
+                من قائمة 
+                scores 
+            </p>
+            <p>
+                هذا الكود من التمرين السابق الذي يحول الاعداد التي يدخلها 
+                المستخدم من 
+                string 
+                الى 
+                int 
+            </p>
+            <pre><code>
+student_scores = input("Input a list of student scores: ").split()
+
+for n in range(0, len(student_scores)):
+    student_scores[n] = int(student_scores[n])
+            </code></pre>
+            <p>
+                وهذه نتيجة البرنامج في الاخير: 
+            </p>
+            <pre><code>
+Input a list of student scores: 78 65 89 86 55 91 64 89
+The highest score in the class is: 91
+            </code></pre>
+            <p>
+                بايثون لديها دوال مفيدة جدا مثل دالة 
+                sum 
+                ودالة 
+                len 
+                وفي تمرين اليوم هناك دالة تفعل ما نريده بالضبط وهي دالة 
+                max
+            </p>
+            <pre><code>
+print(max([78, 65, 89, 86, 55, 91, 64, 89]))
+            </code></pre>
+            <pre><code>
+91
+            </code></pre>
+            <p>
+                ولكن غير مسموح لك ان تستعمل هذه الدالة ولكن استعمل حلقة 
+                for 
+            </p>
+            <p>
+                الحل: 
+            </p>
+            <p>
+                سوف اضع متغير 
+                highest_score 
+                وقيمته الاولى 
+                0
+                ثم
+                سوف ادور على كل عنصر في قائمة ال 
+                scores 
+                وفي كل مرة اقارن 
+                مع قيمة المتغير فان كانت كبيرة عليه فسوف تصبح قيمته هي 
+                القيمة الجديدة الاكبر منه وهكذا عندما يتم مقارنة اكبر عدد 
+                مع قيمة المتغير سوف يأخذ قيمته وسوف تصبح اكبر قيمة في القائمة في 
+                المتغير 
+                highest_score
+                في النهاية
+            </p>
+            <pre><code>
+student_scores = input("Input a list of student scores: ").split()
+
+for n in range(0, len(student_scores)):
+    student_scores[n] = int(student_scores[n])
+
+highest_score = 0
+for score in student_scores:
+    if score > highest_score:
+        highest_score = score
+
+print(f"The highest score in the class is: {highest_score}")
+            </code></pre>
+        </div>
+    </div>
+</body>
+
+</html>
