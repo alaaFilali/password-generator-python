@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>مولد كلمات السر</title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">مولد كلمات السر</h1>
+        <div class="content">
+            <p>
+                بعد ما تعلمنا حول الحلقات في بايثون نحن جاهزون لبناء مولد 
+                كلمات السر وهذه هي نتيجة البرنامج النهائية
+            </p>
+            <pre><code>
+Welcome to the PyPassword Generator!
+How many letters would you like in your password?
+5
+How many symbols would you like?
+6
+How many numbers would you like?
+2
+Your password is: *)+x&R$u3&2Xm
+            </code></pre>
+            <p>
+                بعد ان رحب بي سألني كم تريد من حرف في كلمة السر فقلت له 
+                5
+                ثم سألني مرة اخرى كم تريد من رمز في كلمة السر 
+                فقلت له 
+                6
+                ثم سألني مرة اخرى كم تريد من رقم فقلت له 
+                2
+                فقام بتوليد كلمة السر واعطاهي لي ويمكنني استعمالها في حساباتي و
+                ستكون شبه مستحيل اختراقها لان الاحرف والارقام والرموز مختلطة وطولها 
+                فوق 
+                8
+                حروف
+            </p>
+            <p>
+                حتى لو شغلت البرنامج مرة اخرى وطلبت نفس الاعداد سوف يولد كلمة سر مختلفة تماما
+            </p>
+            <p>
+                وهذا بعض الكود لكي تبدأ منه
+            </p>
+            <pre><code>
+import random
+letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
+
+print("Welcome to the PyPassword Generator!")
+nr_letters = int(input("How many letters would you like in your password?\n")) 
+nr_symbols = int(input(f"How many symbols would you like?\n"))
+nr_numbers = int(input(f"How many numbers would you like?\n"))
+            </code></pre>
+            <p>
+                بحيث لديك قائمة بالحروف من 
+                a 
+                الى 
+                z 
+                وقائمة بالرموز واخرى بالارقام
+                والاسألة التي سوف تخبر الستخدم ان يدخل العدد الذي يريده من كل نوع
+            </p>
+            <p>
+                ومهمتك هي استعمال هذه الاعداد والقوائم لكي تولد كلمة سر قوية
+            </p>
+            <p>
+                الان هناك مستويان لبناء هذا البرنامج السهل والصعب اما السهل فهو ان 
+                تكون الاحرف في كلمة السر هي الاولى ثم الاعداد ثم الرموز اي ان كلمة السر ليست 
+                عشوائية في اماكن الحروف والارقام والرموز وسوف تكون كلمة السر تلك قابلة للاختراق
+            </p>
+            <p>
+                اما المستوى الصعب هو ان كلمة السر تكون عشوائية تماما في اماكن الحروف والرموز والاعداد 
+                حتى ولو تشغل البرنامج مرة اخرى اي انها غير متوقعة على الاطلاق
+            </p>
+            <p>
+                ونصيحتي هي ان تبدأ بالمستوى السهل ثم تنتقل للصعب اما اذا اخترت الصعب مباشرة
+                فانصحك ان تقوم بالبحث عن الاشياء التي تريد فعلها التي لم تراها من قبل
+            </p>
+            <p>
+                حظا موفقا.
+            </p>
+            <p>
+                الحل: 
+            </p>
+            <p>
+                في المستوى السهل سوف نقوم بتعريف متغير 
+                password 
+                ثم سوف نجعل حلقة تدور بعدد مرات التي يريدها الستخدم في كل نوع 
+                ثم نختار عنصر عشوائي باستخدام مكتبة العشوائية ونقوم بالصاقه للمتغير 
+                password
+            </p>
+            <pre><code>
+import random
+
+password = ""
+for char in range(0, nr_letters):
+    password += random.choice(letters)
+            </code></pre>
+            <p>
+                وبنفس الطريقة مع الرموز والاعداد
+            </p>
+            <pre><code>
+...
+for symbol in range(0, nr_symbols):
+    password += random.choice(symbols)
+
+for num in range(0, nr_numbers):
+    password += random.choice(numbers)
+
+print(password)
+            </code></pre>
+            <p>
+                مثال نتيجة البرنامج لو اراد 
+                4
+                حروف ورمزين ورقمين
+            </p>
+            <pre><code>
+adeg$%45
+            </code></pre>
+            <p>
+                الان ننتقل للمستوى الصعب وهو جعل كلمة السر عشوائية تماما وشبه مستحيلة
+                الاختراق
+            </p>
+            <p>
+                والحل هو في مكان الصاق الحروف والرموز والاعداد الى متغير 
+                string 
+                سوف نحوله الى قائمة 
+            </p>
+            <pre><code>
+import random
+
+...
+
+password = []
+for char in range(0, nr_letters):
+    password += random.choice(letters)
+
+for symbol in range(0, nr_symbols):
+    password += random.choice(symbols)
+
+for num in range(0, nr_numbers):
+    password += random.choice(numbers)
+
+print(password)
+        </code></pre>
+        <pre><code>
+3
+3
+3
+["a", "b", "g", "#", "^", "@", "5", "8", "8"]
+        </code></pre>
+        <p>
+            الان كلمة السر الخاصة بنا هي عبارة عن قائمة والسؤال هنا كيف اغير 
+            ترتيب العناصر؟ وببحث صغير في 
+            google 
+            سوف اجد دالة موجودة في مكتبة العشوائية تسمى 
+            shuffle
+            تفعل الشيء الذي اردت بالضبط
+        </p>
+        <p>
+            الان سوف اقوم بطباعة كلمة السر قبل الخلط وبعده لارى النتيجة
+        </p>
+        <pre><code>
+...
+print(password)
+random.shuffle(password)
+print(password)
+        </code></pre>
+        <pre><code>
+How many letters would you like in your password?
+4
+How many symbols would you like?
+5
+How many numbers would you like?
+2
+['Y', 'F', 'H', 'X', '+', '#', '&', '(', '#', '8', '6']
+['6', 'H', '+', '&', '#', '8', 'Y', 'F', '#', 'X', '(']
+        </code></pre>
+        <p>
+            الان كل ماتبقى هو ارجاعها مرة اخرى الى 
+            string 
+            حتى يتسنى للمستخدم ان ينسخها بسهولة ولفعل ذلك نستعمل حلقة 
+            for 
+            ندور حول قائمة ال 
+            password 
+            ونضيف جميع عناصرها او بالاحرى نلصقها في 
+            string 
+        </p>
+        <pre><code>
+import random
+letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
+
+print("Welcome to the PyPassword Generator!")
+nr_letters = int(input("How many letters would you like in your password?\n")) 
+nr_symbols = int(input(f"How many symbols would you like?\n"))
+nr_numbers = int(input(f"How many numbers would you like?\n"))
+
+password = []
+for char in range(0, nr_letters):
+    password += random.choice(letters)
+
+for symbol in range(0, nr_symbols):
+    password += random.choice(symbols)
+
+for num in range(0, nr_numbers):
+    password += random.choice(numbers)
+
+random.shuffle(password)
+
+final_password = ""
+for char in password:
+    final_password += char
+
+print(f"Your password is: {final_password}")
+        </code></pre>
+        </div>
+    </div>
+</body>
+
+</html>
