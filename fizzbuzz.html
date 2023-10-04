@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>
+        تمرين
+        FizzBuzz
+    </title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">
+            تمرين
+            FizzBuzz
+        </h1>
+        <div class="content">
+            <p>
+                التعليمات:
+            </p>
+            <p>
+                اكتب برنامج يقوم بطباعة كل الاعداد من 
+                1
+                الى 
+                100
+                فاذا كان العدد يقبل القسمة على 
+                3
+                اذن اطبع الكلمة 
+                Fizz 
+                اما ان كان العدد يقبل القسمة على 
+                5
+                اذن اطبع الكلمة 
+                Buzz
+                بدل العدد 
+                اما ان كان العدد يقبل القسمة على 
+                3
+                و 
+                5
+                معا اذن اطبع الكلمة
+                FizzBuzz
+                بدل العدد
+            </p>
+            <p>
+                الحل: 
+            </p>
+            <p>
+                مايمكننا فعله هو استخدام مجال من 
+                1
+                الى 
+                101
+                ثم التحقق داخل الدالة ان كان يقبل القسمة على
+                3
+                و
+                5
+                او العددين معا
+                وربما يكون هذا الحل الذي كتبته على حسب المعطيات
+            </p>
+            <pre><code>
+for num in range(1, 101):
+    if num % 3 == 0:
+        print("Fizz")
+    elif num % 5 == 0:
+        print("Buzz")
+    elif num % 5 == 0 and num % 3 == 0:
+        print("FizzBuzz")
+    else:
+        print(num)
+            </code></pre>
+            <p>
+                ولكن هذا الحل يعتبر خاطأ لان لو تعود لدرس عبارة 
+                if 
+                عندما يتحقق شرط ما فلن يتم التحقق من الشروط الاخرى اي انه 
+                لو كان العدد 
+                15
+                وهو عدد يقبل القسمة على 
+                3
+                سوف يطبع العبارة 
+                Fizz 
+                ولكنه كان عليه ان يطبع الكلمة 
+                FizzBuzz 
+                لانه عدد يقبل القسمة على 
+                3
+                و 
+                5
+                معا
+            </p>
+            <p>
+                والحل الصحيح هو قلب التحقق اي نتحقق من العدد ان كان يقبل القسمة على
+                العددين معا قبل كل عدد على حدى
+            </p>
+            <pre><code>
+for num in range(1, 101):
+    if num % 3 == 0 and num % 5 == 0:
+        print("Fizz")
+    elif num % 5 == 0:
+        print("Buzz")
+    elif num % 3 == 0:
+        print("FizzBuzz")
+    else:
+        print(num)
+            </code></pre>
+            <pre><code>
+1
+2
+Fizz
+4
+Buzz 
+...
+            </code></pre>
+        </div>
+    </div>
+</body>
+
+</html>
