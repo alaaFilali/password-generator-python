@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>تمرين مجموع الاعداد الزوجية</title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">تمرين مجموع الاعداد الزوجية</h1>
+        <div class="content">
+            <p>
+                التعليمات: 
+            </p>
+            <p>
+                اكتب برنامج يقوم بجمع الاعداد الزوجية من 
+                1
+                الى 
+                100
+            </p>
+            <p>
+                2 + 4 + 6 + ... + 100
+            </p>
+            <p>
+                الحل: 
+            </p>
+            <p>
+                واحدة من الطرق لحل هذا التمرين هو استعمال دالة 
+                range 
+                مع حلقة 
+                for 
+                والخطوة 
+                2
+                هكذا: 
+            </p>
+            <pre><code>
+total = 0
+for num in range(2, 101, 2):
+    total += num
+
+print(total)
+            </code></pre>
+            <pre><code>
+2550
+            </code></pre>
+            <p>
+                حل اخر هو ان ندور على كل الاعداد ثم نتحقق ان كان ذلك العدد عدد زوجي
+                اذا نضيفه
+            </p>
+            <pre><code>
+total = 0
+for num in range(1, 101):
+    if num % 2 == 0:
+        total += num
+
+print(total)
+            </code></pre>
+            <pre><code>
+2550
+            </code></pre>
+        </div>
+    </div>
+</body>
+
+</html>
